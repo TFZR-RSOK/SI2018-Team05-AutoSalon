@@ -3,6 +3,6 @@ Projekat iz predmeta “Razvoj softvera otvorenog koda”, naziv rada jeste “A
 1. **Zorica Brkić – SI 29/15** - [@brkicz](https://github.com/brkicz "@brkicz") – Kreiranje baze podataka (MSSQL) – Stored Procedure, Views, Triggers, Transactions, Database backup, MSSQL korisnički nalozi. Kreiranje logike aplikacije i povezivanje sa bazom podataka, ujedno i kreiranje REST servisa - ASP.NET MVC, JSON
 2. **Nemanja Tasić – SI 41/16** - [@ntasic89](https://github.com/ntasic89 "@ntasic89") – Kreiranje grafičkog dizajna putem ASP.NET MVC, podrška: CSS (SASS), HTML i jQuery. Kreiranje logike aplikacije i povezivanje sa bazom podataka, ujedno i kreiranje REST servisa - ASP.NET MVC, JSON
 
-**Pošto se tim sastoji iz dva člana, projekat treba realizovati u roku od 5 nedelja. Imajući u vidu da je projekat prijavljen 27.03.2019. isti treba realizovati najkasnije do 08.03.2019.**
+**Pošto se tim sastoji iz dva člana, projekat treba realizovati u roku od 5 nedelja. Imajući u vidu da je projekat prijavljen 28.02.2019. isti treba realizovati najkasnije do 08.04.2019.**
 
 **NAPOMENA** : Tim je pretnodno, pre otprilike 5 meseci započeo realizaciju jednog projekta koji nije završio u predviđenom vremenskom roku i spomenuti projekat je proglašem neuspelim projektom. Repozitorijum spomenutog projekta se nalazi na [SI2018-Team04-MarkirajMe](https://github.com/TFZR-RSOK/SI2018-Team04-MarkirajMe "SI2018-Team04-MarkirajMe")
