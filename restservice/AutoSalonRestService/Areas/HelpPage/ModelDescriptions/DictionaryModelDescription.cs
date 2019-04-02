@@ -1,0 +1,6 @@
+namespace AutoSalonRestService.Areas.HelpPage.ModelDescriptions
+{
+    public class DictionaryModelDescription : KeyValuePairModelDescription
+    {
+    }
+}
