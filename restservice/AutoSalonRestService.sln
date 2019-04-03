@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSalonRestService", "AutoSalonRestService\AutoSalonRestService.csproj", "{92EB6DDA-DF7D-4DC8-AEBA-0CDD79A70E31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSalonRestService", "AutoSalonRestService\AutoSalonRestService.csproj", "{414D8007-B88F-4A9F-B683-31139CF2270F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{92EB6DDA-DF7D-4DC8-AEBA-0CDD79A70E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92EB6DDA-DF7D-4DC8-AEBA-0CDD79A70E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92EB6DDA-DF7D-4DC8-AEBA-0CDD79A70E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92EB6DDA-DF7D-4DC8-AEBA-0CDD79A70E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414D8007-B88F-4A9F-B683-31139CF2270F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414D8007-B88F-4A9F-B683-31139CF2270F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414D8007-B88F-4A9F-B683-31139CF2270F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414D8007-B88F-4A9F-B683-31139CF2270F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

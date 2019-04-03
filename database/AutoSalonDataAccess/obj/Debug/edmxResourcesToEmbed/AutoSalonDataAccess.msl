@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AutoSalonModelStoreContainer" CdmEntityContainer="AutoSalonEntities">
+    <EntitySetMapping Name="Komentars">
+      <EntityTypeMapping TypeName="AutoSalonModel.Komentar">
+        <MappingFragment StoreEntitySet="Komentar">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+          <ScalarProperty Name="IdModela" ColumnName="IdModela" />
+          <ScalarProperty Name="IdKorisnika" ColumnName="IdKorisnika" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisniks">
+      <EntityTypeMapping TypeName="AutoSalonModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Models">
+      <EntityTypeMapping TypeName="AutoSalonModel.Model">
+        <MappingFragment StoreEntitySet="Model">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NazivModela" ColumnName="NazivModela" />
+          <ScalarProperty Name="Motor" ColumnName="Motor" />
+          <ScalarProperty Name="Snaga" ColumnName="Snaga" />
+          <ScalarProperty Name="MaksimalnaBrzina" ColumnName="MaksimalnaBrzina" />
+          <ScalarProperty Name="ProsecnaPotrosnja" ColumnName="ProsecnaPotrosnja" />
+          <ScalarProperty Name="Slika" ColumnName="Slika" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ProsecnaOcena" ColumnName="ProsecnaOcena" />
+          <ScalarProperty Name="IdProizvodjaca" ColumnName="IdProizvodjaca" />
+          <ScalarProperty Name="Slika1" ColumnName="Slika1" />
+          <ScalarProperty Name="Slika2" ColumnName="Slika2" />
+          <ScalarProperty Name="Slika3" ColumnName="Slika3" />
+          <ScalarProperty Name="Slika4" ColumnName="Slika4" />
+          <ScalarProperty Name="Slika5" ColumnName="Slika5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ocenas">
+      <EntityTypeMapping TypeName="AutoSalonModel.Ocena">
+        <MappingFragment StoreEntitySet="Ocena">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdModela" ColumnName="IdModela" />
+          <ScalarProperty Name="IdKorisnika" ColumnName="IdKorisnika" />
+          <ScalarProperty Name="Vrednost" ColumnName="Vrednost" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proizvodjacs">
+      <EntityTypeMapping TypeName="AutoSalonModel.Proizvodjac">
+        <MappingFragment StoreEntitySet="Proizvodjac">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NazivProizvodjaca" ColumnName="NazivProizvodjaca" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

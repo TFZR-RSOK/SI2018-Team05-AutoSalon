@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AutoSalonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Komentar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tekst" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdModela" Type="bigint" Nullable="false" />
+    <Property Name="IdKorisnika" Type="bigint" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Korisnik">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KorisnickoIme" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Lozinka" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Prezime" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Tip" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazivModela" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Motor" Type="int" Nullable="false" />
+    <Property Name="Snaga" Type="int" Nullable="false" />
+    <Property Name="MaksimalnaBrzina" Type="int" Nullable="false" />
+    <Property Name="ProsecnaPotrosnja" Type="float" Nullable="false" />
+    <Property Name="Slika" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tip" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="ProsecnaOcena" Type="float" Nullable="false" />
+    <Property Name="IdProizvodjaca" Type="bigint" Nullable="false" />
+    <Property Name="Slika1" Type="nvarchar(max)" />
+    <Property Name="Slika2" Type="nvarchar(max)" />
+    <Property Name="Slika3" Type="nvarchar(max)" />
+    <Property Name="Slika4" Type="nvarchar(max)" />
+    <Property Name="Slika5" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Ocena">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdModela" Type="bigint" Nullable="false" />
+    <Property Name="IdKorisnika" Type="bigint" Nullable="false" />
+    <Property Name="Vrednost" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proizvodjac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazivProizvodjaca" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Tip" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Komentar_Korisnik">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Komentar" Type="Self.Komentar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Komentar">
+        <PropertyRef Name="IdKorisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Komentar_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="1" />
+    <End Role="Komentar" Type="Self.Komentar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Komentar">
+        <PropertyRef Name="IdModela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Model_Proizvodjac">
+    <End Role="Proizvodjac" Type="Self.Proizvodjac" Multiplicity="1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proizvodjac">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="IdProizvodjaca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ocena_Korisnik">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Ocena" Type="Self.Ocena" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ocena">
+        <PropertyRef Name="IdKorisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ocena_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="1" />
+    <End Role="Ocena" Type="Self.Ocena" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ocena">
+        <PropertyRef Name="IdModela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AutoSalonModelStoreContainer">
+    <EntitySet Name="Komentar" EntityType="Self.Komentar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ocena" EntityType="Self.Ocena" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proizvodjac" EntityType="Self.Proizvodjac" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Komentar_Korisnik" Association="Self.FK_Komentar_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Komentar" EntitySet="Komentar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Komentar_Model" Association="Self.FK_Komentar_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Komentar" EntitySet="Komentar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Model_Proizvodjac" Association="Self.FK_Model_Proizvodjac">
+      <End Role="Proizvodjac" EntitySet="Proizvodjac" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ocena_Korisnik" Association="Self.FK_Ocena_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Ocena" EntitySet="Ocena" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ocena_Model" Association="Self.FK_Ocena_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Ocena" EntitySet="Ocena" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

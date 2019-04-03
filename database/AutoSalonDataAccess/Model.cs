@@ -31,6 +31,11 @@ namespace AutoSalonDataAccess
         public string Status { get; set; }
         public double ProsecnaOcena { get; set; }
         public long IdProizvodjaca { get; set; }
+        public string Slika1 { get; set; }
+        public string Slika2 { get; set; }
+        public string Slika3 { get; set; }
+        public string Slika4 { get; set; }
+        public string Slika5 { get; set; }
     
         public virtual ICollection<Komentar> Komentars { get; set; }
         public virtual Proizvodjac Proizvodjac { get; set; }

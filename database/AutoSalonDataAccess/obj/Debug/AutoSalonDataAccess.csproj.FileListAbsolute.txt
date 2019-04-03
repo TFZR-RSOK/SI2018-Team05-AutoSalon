@@ -1,0 +1,10 @@
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\bin\Debug\AutoSalonDataAccess.dll.config
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\bin\Debug\AutoSalonDataAccess.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\bin\Debug\AutoSalonDataAccess.pdb
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\bin\Debug\EntityFramework.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\bin\Debug\EntityFramework.xml
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\obj\Debug\AutoSalonDataAccess.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\obj\Debug\AutoSalonDataAccess.pdb
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\database\AutoSalonDataAccess\obj\Debug\AutoSalonDataAccess.csprojResolveAssemblyReference.cache

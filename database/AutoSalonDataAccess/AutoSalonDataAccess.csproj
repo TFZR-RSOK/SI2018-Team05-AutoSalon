@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4FF3D345-15E5-4B37-924E-4DE7E2448219}</ProjectGuid>
+    <ProjectGuid>{74897054-ECB5-45B1-B12A-3903A70C1FA1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AutoSalonDataAccess</RootNamespace>
@@ -48,58 +48,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoSalonDataModel.Context.cs">
+    <Compile Include="AutoSalonDataAccess.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoSalonDataModel.Context.tt</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AutoSalonDataModel.cs">
+    <Compile Include="AutoSalonDataAccess.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoSalonDataModel.tt</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.tt</DependentUpon>
     </Compile>
-    <Compile Include="AutoSalonDataModel.Designer.cs">
+    <Compile Include="AutoSalonDataAccess.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoSalonDataModel.edmx</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.edmx</DependentUpon>
     </Compile>
     <Compile Include="Komentar.cs">
-      <DependentUpon>AutoSalonDataModel.tt</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.tt</DependentUpon>
     </Compile>
     <Compile Include="Korisnik.cs">
-      <DependentUpon>AutoSalonDataModel.tt</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.tt</DependentUpon>
     </Compile>
     <Compile Include="Model.cs">
-      <DependentUpon>AutoSalonDataModel.tt</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProizvodjacDTO.cs" />
     <Compile Include="Ocena.cs">
-      <DependentUpon>AutoSalonDataModel.tt</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.tt</DependentUpon>
     </Compile>
     <Compile Include="Proizvodjac.cs">
-      <DependentUpon>AutoSalonDataModel.tt</DependentUpon>
+      <DependentUpon>AutoSalonDataAccess.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="AutoSalonDataModel.edmx">
+    <EntityDeploy Include="AutoSalonDataAccess.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AutoSalonDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AutoSalonDataAccess.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="AutoSalonDataModel.Context.tt">
+    <None Include="AutoSalonDataAccess.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutoSalonDataModel.edmx</DependentUpon>
-      <LastGenOutput>AutoSalonDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>AutoSalonDataAccess.edmx</DependentUpon>
+      <LastGenOutput>AutoSalonDataAccess.Context.cs</LastGenOutput>
     </None>
-    <None Include="AutoSalonDataModel.edmx.diagram">
-      <DependentUpon>AutoSalonDataModel.edmx</DependentUpon>
+    <None Include="AutoSalonDataAccess.edmx.diagram">
+      <DependentUpon>AutoSalonDataAccess.edmx</DependentUpon>
     </None>
-    <None Include="AutoSalonDataModel.tt">
+    <None Include="AutoSalonDataAccess.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutoSalonDataModel.edmx</DependentUpon>
-      <LastGenOutput>AutoSalonDataModel.cs</LastGenOutput>
+      <DependentUpon>AutoSalonDataAccess.edmx</DependentUpon>
+      <LastGenOutput>AutoSalonDataAccess.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
