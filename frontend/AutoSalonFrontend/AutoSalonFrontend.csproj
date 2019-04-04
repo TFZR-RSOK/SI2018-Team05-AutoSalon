@@ -160,12 +160,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Modeli\DodajIzmeniModel.aspx" />
+    <Content Include="Modeli\PregledModela.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Proizvodjaci\DodajIzmeniProizvodjaca.aspx" />
+    <Content Include="Proizvodjaci\PregledProizvodjaca.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -304,7 +308,35 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Modeli\DodajIzmeniModel.aspx.cs">
+      <DependentUpon>DodajIzmeniModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modeli\DodajIzmeniModel.aspx.designer.cs">
+      <DependentUpon>DodajIzmeniModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modeli\PregledModela.aspx.cs">
+      <DependentUpon>PregledModela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modeli\PregledModela.aspx.designer.cs">
+      <DependentUpon>PregledModela.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Proizvodjaci\DodajIzmeniProizvodjaca.aspx.cs">
+      <DependentUpon>DodajIzmeniProizvodjaca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proizvodjaci\DodajIzmeniProizvodjaca.aspx.designer.cs">
+      <DependentUpon>DodajIzmeniProizvodjaca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Proizvodjaci\PregledProizvodjaca.aspx.cs">
+      <DependentUpon>PregledProizvodjaca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proizvodjaci\PregledProizvodjaca.aspx.designer.cs">
+      <DependentUpon>PregledProizvodjaca.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
