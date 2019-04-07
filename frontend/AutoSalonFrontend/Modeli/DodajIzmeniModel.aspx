@@ -3,14 +3,12 @@
 <asp:Content ID="BodyContent" runat="server" contentplaceholderid="MainContent">
     
     <script type ="text/javascript">
-        var apiUrl = "http://localhost:3940/api/";
 
         $(document).ready(function () {
             $.ajax({
                 type: "GET",
                 url: apiUrl + "Proizvodjaci",
                 success: function (response) {
-                    // Replace the div's content with the page method's return.
                     var proizvodjaci = response.$values;
 
                     for (var index in proizvodjaci) {
@@ -48,12 +46,11 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (msg) {
-                    // Replace the div's content with the page method's return.
                     alert("Model uspesno kreiran ");
                     window.location.replace(window.location.origin + "/Modeli/PregledModela");
                 },
                 error: function (msg) {
-                    alert("Greska pri cuvanju modela: ");
+                    alert("Greska pri cuvanju modela");
                 }
             });
         });
