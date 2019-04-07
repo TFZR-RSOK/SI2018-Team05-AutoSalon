@@ -2,29 +2,87 @@
 
 <asp:Content ID="BodyContent" runat="server" contentplaceholderid="MainContent">
     
+    <script type ="text/javascript">
+        var apiUrl = "http://localhost:3940/api/";
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: apiUrl + "Proizvodjaci",
+                success: function (response) {
+                    // Replace the div's content with the page method's return.
+                    var proizvodjaci = response.$values;
+
+                    for (var index in proizvodjaci) {
+                        var p = proizvodjaci[index];
+                        $("#proizvodjac").append(new Option(p.NazivProizvodjaca, p.Id));
+                    }
+                }
+            });
+        });
+
+        $("form").submit(function (event) {
+            event.preventDefault();
+
+            var form = {
+                "NazivModela": $("#nazivModela").val(),
+                "Motor": parseInt($("#motor").val()),
+                "Snaga": parseInt($("#snaga").val()),
+                "MaksimalnaBrzina": parseInt($("#maksimalnaBrzina").val()),
+                "ProsecnaPotrosnja": parseFloat($("#prosecnaPotrosnja").val()),
+                "Tip": $("#tip").val(),
+                "IdProizvodjaca": parseInt($("#proizvodjac").val()),
+                "Slika": $("#slika").val(),
+                "Slika1": $("#slika1").val(),
+                "Slika2": $("#slika2").val(),
+                "Slika3": $("#slika3").val(),
+                "Slika4": $("#slika4").val(),
+                "Slika5": $("#slika5").val(),
+                "Status": "Aktivan"
+            }
+
+            $.ajax({
+                type: "POST",
+                url: apiUrl + "Modeli",
+                data: JSON.stringify(form),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    // Replace the div's content with the page method's return.
+                    alert("Model uspesno kreiran ");
+                    window.location.replace(window.location.origin + "/Modeli/PregledModela");
+                },
+                error: function (msg) {
+                    alert("Greska pri cuvanju modela: ");
+                }
+            });
+        });
+
+    </script>
+
     <div>
         <h2>Unos Modela</h2>
 
-        <form>
+        <form >
           <div class="form-group">
             <label for="nazivModela">Naziv Modela</label>
-            <input type="text" class="form-control" id="nazivModela" placeholder="Naziv Modela" />
+            <input type="text" class="form-control" id="nazivModela" placeholder="Naziv Modela" required/>
           </div>
             <div class="form-group">
             <label for="motor">Motor</label>
-            <input type="number" class="form-control" id="motor" placeholder="Motor (Kubikaza)" />
+            <input type="number" class="form-control" id="motor" placeholder="Motor (Kubikaza)" required/>
           </div>
             <div class="form-group">
             <label for="snaga">Snaga</label>
-            <input type="number" class="form-control" id="snaga" placeholder="Snaga (KS)" />
+            <input type="number" class="form-control" id="snaga" placeholder="Snaga (KS)" required/>
           </div>
           <div class="form-group">
             <label for="maksimalnaBrzina">MaksimalnaBrzina</label>
-            <input type="number" class="form-control" id="maksimalnaBrzina" placeholder="Maksimalna brzina (km/h)" />
+            <input type="number" class="form-control" id="maksimalnaBrzina" placeholder="Maksimalna brzina (km/h)" required/>
           </div>
           <div class="form-group">
             <label for="prosecnaPotrosnja">Prosecna potrosnja</label>
-            <input type="number" class="form-control" id="prosecnaPotrosnja" placeholder="Prosecna potrosnja (l/100km)" />
+            <input type="number" class="form-control" id="prosecnaPotrosnja" placeholder="Prosecna potrosnja (l/100km)" required/>
           </div>
           <div class="form-group">
             <label for="tip">Tip</label>
@@ -36,15 +94,11 @@
           </div>
           <div class="form-group">
             <label for="proizvodjac">Proizvodjac</label>
-            <select id="proizvodjac" class="form-control">
-                <option>Mercedes</option>
-                <option>Audi</option>
-                <option>BMW</option>
-            </select>
+            <select id="proizvodjac" class="form-control"></select>
           </div>
           <div class="form-group">
             <label for="slika">Glavna slika</label>
-            <input type="text" class="form-control" id="slika" placeholder="Glavna slika (URL)" />
+            <input type="text" class="form-control" id="slika" placeholder="Glavna slika (URL)" required/>
           </div>
           <div class="form-group">
             <label for="slika1">Slika 1</label>

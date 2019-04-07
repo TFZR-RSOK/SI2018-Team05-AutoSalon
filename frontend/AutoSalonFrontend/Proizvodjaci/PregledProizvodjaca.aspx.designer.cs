@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AutoSalonFrontend.Modeli {
+namespace AutoSalonFrontend.Proizvodjaci {
     
     
     public partial class PregledProizvodjaca {

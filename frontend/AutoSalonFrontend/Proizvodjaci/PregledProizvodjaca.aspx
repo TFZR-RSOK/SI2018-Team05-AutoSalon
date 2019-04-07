@@ -1,4 +1,4 @@
-﻿<%@Page Title="Pregled Proizvodjaca" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PregledProizvodjaca.aspx.cs" Inherits="AutoSalonFrontend.Modeli.PregledProizvodjaca" %>
+﻿<%@Page Title="Pregled Proizvodjaca" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PregledProizvodjaca.aspx.cs" Inherits="AutoSalonFrontend.Proizvodjaci.PregledProizvodjaca" %>
 
 <asp:Content ID="BodyContent" runat="server" contentplaceholderid="MainContent">
     
