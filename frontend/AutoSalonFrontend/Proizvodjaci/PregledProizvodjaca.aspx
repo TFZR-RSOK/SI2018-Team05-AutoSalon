@@ -5,6 +5,11 @@
     <script type ="text/javascript">
 
         $(document).ready(function () {
+
+            if (!isLogedIn() || !isAdmin()) {
+                $("#dodaj").css({display: "none"})
+            }
+
             $.ajax({
                 type: "GET",
                 url: apiUrl + "Proizvodjaci",
@@ -41,7 +46,9 @@
                             }
                         }
                         var Brisanje = $("<button>").text("Brisanje").attr("class", "btn btn-danger").attr("id", m.Id).on("click", obrisiFun)
-                        Opcije.append(Izmena, Brisanje);
+                        if (isAdmin()) {
+                            Opcije.append(Izmena, Brisanje);
+                        }                       
 
                         $("#proizvodjaci").find('tbody')
                             .append($('<tr>')
@@ -56,7 +63,7 @@
     
     <div>
         <h2>Pregled Proizvodjaca
-           <span class="float-right"><a runat="server" href="~/Proizvodjaci/DodajIzmeniProizvodjaca">Dodaj novog</a></span>
+           <span id="dodaj" class="float-right"><a runat="server" href="~/Proizvodjaci/DodajIzmeniProizvodjaca">Dodaj novog</a></span>
         </h2>
 
         <table id="proizvodjaci" class="table">

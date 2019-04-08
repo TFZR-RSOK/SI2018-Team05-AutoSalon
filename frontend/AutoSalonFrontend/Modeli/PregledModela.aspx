@@ -5,6 +5,11 @@
     <script type ="text/javascript">
 
         $(document).ready(function () {
+
+            if (!isLogedIn() || !isAdmin()) {
+                $("#dodaj").css({ display: "none" })
+            }
+
             $.ajax({
                 type: "GET",
                 url: apiUrl + "Modeli",
@@ -51,7 +56,10 @@
                             }
                         }
                         var Brisanje = $("<button>").text("Brisanje").attr("class", "btn btn-danger").attr("id", m.Id).on("click", obrisiFun)
-                        Opcije.append(Detalji, Izmena, Brisanje);
+                        Opcije.append(Detalji);
+                        if (isAdmin()) {
+                            Opcije.append(Izmena, Brisanje)
+                        }
 
                         $("#modeli").find('tbody')
                             .append($('<tr>')
@@ -97,7 +105,11 @@
                                 }
                             }
                             var Brisanje = $("<button>").text("Brisanje").attr("class", "btn btn-danger").attr("id", m1.Id).on("click", obrisiFun)
-                            Opcije.append(Detalji, Izmena, Brisanje);
+                            Opcije.append(Detalji);
+
+                            if (isAdmin()) {
+                                Opcije.append(Izmena, Brisanje)
+                            }
 
                             $("#modeli").find('tbody')
                                 .append($('<tr>')
@@ -112,7 +124,7 @@
 
     <div>
         <h2>Pregled Modela
-           <span class="float-right"><a runat="server" href="~/Modeli/DodajIzmeniModel">Dodaj novi</a></span>
+           <span id="dodaj" class="float-right"><a runat="server" href="~/Modeli/DodajIzmeniModel">Dodaj novi</a></span>
         </h2>
 
         <table id="modeli" class="table">

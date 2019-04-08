@@ -160,6 +160,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Korisnici\Login.aspx" />
     <Content Include="Modeli\DodajIzmeniModel.aspx" />
     <Content Include="Modeli\Model.aspx" />
     <Content Include="Modeli\PregledModela.aspx" />
@@ -308,6 +309,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnici\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Korisnici\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modeli\DodajIzmeniModel.aspx.cs">
       <DependentUpon>DodajIzmeniModel.aspx</DependentUpon>

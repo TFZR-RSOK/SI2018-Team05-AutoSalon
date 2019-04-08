@@ -8,6 +8,12 @@
         const id = urlParams.get('id');
 
         $(document).ready(function () {
+
+            if (!isLogedIn()) {
+                $("#ocenaForm").css({ display: "none" })
+                $("#komentarForm").css({ display: "none" })
+            }
+
             $.ajax({
                 type: "GET",
                 url: apiUrl + "Modeli/" + id,
@@ -76,7 +82,7 @@
             var form = {
                 "Tekst": $("#komentar").val(),
                 "IdModela": parseInt(urlParams.get('id')),
-                "IdKorisnika": 1
+                "IdKorisnika": parseInt(getUserId())
             }
 
             console.log(form)
@@ -103,7 +109,7 @@
             var form = {
                 "Vrednost": parseInt($("#ocena").val()),
                 "IdModela": parseInt(urlParams.get('id')),
-                "IdKorisnika": 1
+                "IdKorisnika": parseInt(getUserId())
             }
 
             console.log(form)
@@ -172,8 +178,8 @@
             </table>
         </div>
 
-        <div>            
-            
+        <div id="ocenaForm">            
+            <h4>Ocena modela</h4>
             <div class="form-group">
                 <label for="ocena">Ocena</label>
                 <select id="ocena" class="form-control">
@@ -193,15 +199,16 @@
             <div id="komentari">
             </div>
 
-            <legend>Ostavite vas komentar</legend>
-            <form id="formKomentar" name="formKomentar">
-                <div class="form-group">
-                    <label for="komentar">Vas komentar</label>
-                    <textarea class="form-control" id="komentar" placeholder="Unesite Vas komentar" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Posalji</button>
-            </form>
-
+            <div id="komentarForm">            
+                <legend >Ostavite vas komentar</legend>
+                <form id="formKomentar" name="formKomentar">
+                    <div class="form-group">
+                        <label for="komentar">Vas komentar</label>
+                        <textarea class="form-control" id="komentar" placeholder="Unesite Vas komentar" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Posalji</button>
+                </form>
+            </div>
         </div>
     </div>
     

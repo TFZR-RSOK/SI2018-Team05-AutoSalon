@@ -16,6 +16,7 @@
 
     <script type="text/javascript">
         window.apiUrl = "http://localhost:3940/api/";
+
     </script>
 
 </head>
@@ -42,6 +43,41 @@
             </Scripts>
         </asp:ScriptManager>
 
+        <script type="text/javascript">
+            $(document).ready(function () {
+                if (localStorage.getItem("id")) {
+                    $("#register").css({ display: "none" });
+                    $("#login").css({ display: "none" });
+                } else {
+                    $("#logout").css({ display: "none" });
+                }
+            });
+
+            function logout(event) {
+                event.preventDefault();
+                localStorage.clear();
+                location.reload();
+            }
+
+            function isLogedIn() {
+                if (localStorage.getItem("id")) {
+                    return true;
+                }
+                return false;
+            }
+
+            function isAdmin() {
+                if (localStorage.getItem("id") && localStorage.getItem("tip") && localStorage.getItem("tip") === "Admin") {
+                    return true;
+                }
+                return false;
+            }
+
+            function getUserId() {
+                return localStorage.getItem("id");
+            }
+        </script>
+
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -60,22 +96,12 @@
                         <%--<li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>--%>
                     </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="register"><a runat="server" href="~/Korisnici/Register">Register</a></li>
+                        <li id="login"><a runat="server" href="~/Korisnici/Login">Log in</a></li>
+                        <li id="logout"><a runat="server" href="~/Korisnici/Login" onclick="logout(event)">Log out</a></li>
+                    </ul>
+                    
                 </div>
             </div>
         </div>
