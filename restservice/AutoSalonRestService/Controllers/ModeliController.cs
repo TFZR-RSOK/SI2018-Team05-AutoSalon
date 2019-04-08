@@ -17,7 +17,7 @@ namespace AutoSkolaRestService.Controllers
         public IEnumerable<Model> Get()
         {
             return entities.Models
-                .Where(p => p.Status == "Aktivan").ToList();
+                .Where(p => p.Status == "Aktivan");
         }
 
         public Model Get(int id)

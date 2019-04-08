@@ -11,11 +11,12 @@
                 success: function (response) {
                     var modeli = response.$values;
 
-                    console.log("modeli", modeli);
-
                     for (var index in modeli) {
                         var m = modeli[index];
                         if (m.hasOwnProperty("$ref")) {
+                            continue
+                        }
+                        if (m.Status === "Obrisan") {
                             continue
                         }
 
@@ -31,14 +32,14 @@
                         var Opcije = $("<td>");
                         var Detalji = $("<a>").text("Detalji").attr("href", window.location.origin + "/Modeli/Model?id=" + m.Id).attr("class", "btn btn-primary")
                         var Izmena = $("<a>").text("Izmena").attr("href", window.location.origin + "/Modeli/DodajIzmeniModel?id=" + m.Id).attr("class", "btn btn-warning")
-                        document.idModela = m.Id;
+                        
                         var obrisiFun = function (event) {
                             event.preventDefault();
                             var r = confirm("Da li ste sigurni da zelite obrisati model ?");
                             if (r == true) {
                                 $.ajax({
                                     type: "DELETE",
-                                    url: apiUrl + "Modeli/" + document.idModela,
+                                    url: apiUrl + "Modeli/" + event.target.id,
                                     success: function (response) {
                                         alert("Model uspesno obrisan");
                                         window.location.reload();
@@ -49,7 +50,7 @@
                                 });
                             }
                         }
-                        var Brisanje = $("<button>").text("Brisanje").attr("class", "btn btn-danger").on("click", obrisiFun)
+                        var Brisanje = $("<button>").text("Brisanje").attr("class", "btn btn-danger").attr("id", m.Id).on("click", obrisiFun)
                         Opcije.append(Detalji, Izmena, Brisanje);
 
                         $("#modeli").find('tbody')
@@ -58,9 +59,11 @@
 
                         for (var index1 in m.Proizvodjac.Models.$values) {
                             var m1 = m.Proizvodjac.Models.$values[index1];
-                            console.log(m1);
 
                             if (m1.hasOwnProperty("$ref")) {
+                                continue
+                            }
+                            if (m1.Status === "Obrisan") {
                                 continue
                             }
 
@@ -75,14 +78,14 @@
                             var Opcije = $("<td>");
                             var Detalji = $("<a>").text("Detalji").attr("href", window.location.origin + "/Modeli/Model?id=" + m1.Id).attr("class", "btn btn-primary")
                             var Izmena = $("<a>").text("Izmena").attr("href", window.location.origin + "/Modeli/DodajIzmeniModel?id=" + m1.Id).attr("class", "btn btn-warning")
-                            document.idModela = m1.Id;
+                            
                             var obrisiFun = function (event) {
                                 event.preventDefault();
                                 var r = confirm("Da li ste sigurni da zelite obrisati model ?");
                                 if (r == true) {
                                     $.ajax({
                                         type: "DELETE",
-                                        url: apiUrl + "Modeli/" + document.idModela,
+                                        url: apiUrl + "Modeli/" + event.target.id,
                                         success: function (response) {
                                             alert("Model uspesno obrisan");
                                             window.location.reload();
@@ -93,7 +96,7 @@
                                     });
                                 }
                             }
-                            var Brisanje = $("<button>").text("Brisanje").attr("class", "btn btn-danger").on("click", obrisiFun)
+                            var Brisanje = $("<button>").text("Brisanje").attr("class", "btn btn-danger").attr("id", m1.Id).on("click", obrisiFun)
                             Opcije.append(Detalji, Izmena, Brisanje);
 
                             $("#modeli").find('tbody')
