@@ -1,0 +1,11 @@
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\AutoSalonLogic.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\AutoSalonLogic.pdb
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\AutoSalonDataAccess.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\EntityFramework.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\AutoSalonDataAccess.pdb
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\EntityFramework.xml
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\obj\Debug\AutoSalonLogic.csprojResolveAssemblyReference.cache
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\obj\Debug\AutoSalonLogic.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\logic\AutoSalonLogic\obj\Debug\AutoSalonLogic.pdb

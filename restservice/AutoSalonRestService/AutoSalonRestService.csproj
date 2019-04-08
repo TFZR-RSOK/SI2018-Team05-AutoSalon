@@ -42,6 +42,9 @@
     <Reference Include="AutoSalonDataAccess">
       <HintPath>..\..\database\AutoSalonDataAccess\bin\Debug\AutoSalonDataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="AutoSalonLogic">
+      <HintPath>..\..\logic\AutoSalonLogic\bin\Debug\AutoSalonLogic.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\database\AutoSalonDataAccess\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>

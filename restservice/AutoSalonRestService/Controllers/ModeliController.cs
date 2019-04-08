@@ -1,4 +1,5 @@
 ﻿using AutoSalonDataAccess;
+using AutoSalonLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace AutoSkolaRestService.Controllers
 
         public IHttpActionResult Post(Model p)
         {
-            if (!ModelState.IsValid)
+            if (!Validatori.modelFormaValidna(p))
             {
                 return BadRequest(ModelState);
             }
@@ -40,7 +41,7 @@ namespace AutoSkolaRestService.Controllers
 
         public IHttpActionResult Put(int id, Model m)
         {
-            if (!ModelState.IsValid)
+            if (!Validatori.modelFormaValidna(m))
             {
                 return BadRequest("Not a valid model");
             }

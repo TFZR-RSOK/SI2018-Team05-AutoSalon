@@ -39,3 +39,5 @@ D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\restservice\AutoSalonRestService\
 D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\restservice\AutoSalonRestService\bin\System.Web.Cors.dll
 D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\restservice\AutoSalonRestService\bin\System.Web.Http.Cors.dll
 D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\restservice\AutoSalonRestService\bin\System.Web.Http.Cors.xml
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\restservice\AutoSalonRestService\bin\AutoSalonLogic.dll
+D:\FTN\_casovi\ASP.NET\SI2018-Team05-AutoSalon\restservice\AutoSalonRestService\bin\AutoSalonLogic.pdb
