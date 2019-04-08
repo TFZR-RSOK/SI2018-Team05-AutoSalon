@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace AutoSkolaRestService.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class KorisniciController : ApiController
     {
         AutoSalonEntities entities = new AutoSalonEntities();

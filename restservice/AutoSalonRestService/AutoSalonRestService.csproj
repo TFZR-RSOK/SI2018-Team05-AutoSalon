@@ -170,6 +170,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KomentariController.cs" />
     <Compile Include="Controllers\KorisniciController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ModeliController.cs" />
     <Compile Include="Controllers\OceneController.cs" />
     <Compile Include="Controllers\ProizvodjaciController.cs" />
