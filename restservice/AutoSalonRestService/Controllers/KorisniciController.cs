@@ -20,7 +20,7 @@ namespace AutoSkolaRestService.Controllers
 
         public Korisnik Get(int id)
         {
-            return entities.Korisniks.Where(k => k.Id == id && p.Status == "Aktivan").FirstOrDefault();
+            return entities.Korisniks.Where(k => k.Id == id && k.Status == "Aktivan").FirstOrDefault();
         }
 
         public IHttpActionResult Post(Korisnik k)

@@ -161,6 +161,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Modeli\DodajIzmeniModel.aspx" />
+    <Content Include="Modeli\Model.aspx" />
     <Content Include="Modeli\PregledModela.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -314,6 +315,13 @@
     </Compile>
     <Compile Include="Modeli\DodajIzmeniModel.aspx.designer.cs">
       <DependentUpon>DodajIzmeniModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modeli\Model.aspx.cs">
+      <DependentUpon>Model.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modeli\Model.aspx.designer.cs">
+      <DependentUpon>Model.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modeli\PregledModela.aspx.cs">
       <DependentUpon>PregledModela.aspx</DependentUpon>

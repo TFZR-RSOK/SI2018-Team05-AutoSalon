@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AutoSkolaRestService.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class KomentariController : ApiController
     {
         AutoSalonEntities entities = new AutoSalonEntities();
@@ -29,6 +31,7 @@ namespace AutoSkolaRestService.Controllers
             {
                 return BadRequest(ModelState);
             }
+            k.Status = "Aktivan";
             entities.Komentars.Add(k);
             entities.SaveChanges();
 

@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AutoSkolaRestService.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class OceneController : ApiController
     {
         AutoSalonEntities entities = new AutoSalonEntities();
@@ -20,7 +22,7 @@ namespace AutoSkolaRestService.Controllers
 
         public Ocena Get(int id)
         {
-            return entities.Ocenas.Where(o => o.Id == id && p.Status == "Aktivan").FirstOrDefault();
+            return entities.Ocenas.Where(o => o.Id == id && o.Status == "Aktivan").FirstOrDefault();
         }
 
         public IHttpActionResult Post(Ocena o)
@@ -29,11 +31,12 @@ namespace AutoSkolaRestService.Controllers
             {
                 return BadRequest(ModelState);
             }
+            o.Status = "Aktivan";
             entities.Ocenas.Add(o);
             entities.SaveChanges();
 
             //return CreatedAtRoute("CREATE Ocena", o.Id, o);
-            return Ok(k);
+            return Ok(o);
         }
 
         public IHttpActionResult Put(int id, Ocena o)
@@ -61,11 +64,11 @@ namespace AutoSkolaRestService.Controllers
                 return NotFound();
             }
 
-            existing.Vrednost = k.Vrednost;
+            existing.Vrednost = o.Vrednost;
             existing.Model = m;
-            existing.IdModela = k.IdModela;
+            existing.IdModela = m.Id;
             existing.Korisnik = kor;
-            existing.IdKorisnika = k.IdKorisnika;
+            existing.IdKorisnika = kor.Id;
             entities.SaveChanges();
             return Ok(existing);
         }
