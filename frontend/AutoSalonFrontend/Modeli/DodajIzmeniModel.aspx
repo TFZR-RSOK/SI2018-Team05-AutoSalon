@@ -15,12 +15,42 @@
                         var p = proizvodjaci[index];
                         $("#proizvodjac").append(new Option(p.NazivProizvodjaca, p.Id));
                     }
+
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const id = urlParams.get('id');
+
+                    if (id) {
+                        $.ajax({
+                            type: "GET",
+                            url: apiUrl + "Modeli/" + id,
+                            success: function (response) {
+                                $("#nazivModela").val(response.NazivModela);
+                                $("#motor").val(response.Motor);
+                                $("#snaga").val(response.Snaga);
+                                $("#maksimalnaBrzina").val(response.MaksimalnaBrzina);
+                                $("#prosecnaPotrosnja").val(response.ProsecnaPotrosnja);
+                                $("#tip").val(response.Tip);
+                                $("#proizvodjac").val(response.IdProizvodjaca);
+                                $("#slika").val(response.Slika);
+                                $("#slika1").val(response.Slika1);
+                                $("#slika2").val(response.Slika2);
+                                $("#slika3").val(response.Slika3);
+                                $("#slika4").val(response.Slika4);
+                                $("#slika5").val(response.Slika5);
+
+                            }
+                        })
+                    }
                 }
-            });
+            })
+ 
         });
 
         $("form").submit(function (event) {
             event.preventDefault();
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
 
             var form = {
                 "NazivModela": $("#nazivModela").val(),
@@ -40,13 +70,13 @@
             }
 
             $.ajax({
-                type: "POST",
-                url: apiUrl + "Modeli",
+                type: id ? "PUT" : "POST",
+                url: id ? apiUrl + "Modeli/" + id : apiUrl + "Modeli",
                 data: JSON.stringify(form),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (msg) {
-                    alert("Model uspesno kreiran ");
+                    alert("Model uspesno sacuvan ");
                     window.location.replace(window.location.origin + "/Modeli/PregledModela");
                 },
                 error: function (msg) {
